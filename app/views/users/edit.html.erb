@@ -1,0 +1,31 @@
+
+<h2>User info</h2>
+
+<% if @user.errors.any? %>
+<div id="error_explanation">
+<h2><%= pluralize(@user.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+  <div>
+    <label for="inputName">Name</label>
+    <%= f.text_field :name, autofocus: true, id:"inputName", placeholder:"名前"%>
+    </div>
+    <div>
+    <label for="inputProfileImage">Image</label>
+    <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form", id:"inputProfileImage" %>
+    </div>
+    <div>
+    <label for="inputIntroduction">Introduction</label>
+    <%= f.text_area :introduction, id:"inputIntroduction", placeholder:"説明"%>
+    </div>
+    <%= f.submit "Update User" %>
+  <% end %>
+

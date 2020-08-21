@@ -10,6 +10,41 @@
   </head>
 
   <body>
+  <header>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <h1 class="navbar-brand">Bookers</h1>
+  <div class="menu">
+  <ul class="nav navbar-nav navbar-right">
+  <% if user_signed_in? %>
+  <li><%= link_to user_path(current_user.id) do %><span class="glyphicon glyphicon-home" aria-hidden="true"><span class="list">Home</span></span><%end%></li>
+  <li><%= link_to users_path do %><span class="glyphicon glyphicon-user" aria-hidden="true"><span class="list">Users</span></span><%end%></li>
+  <li><%= link_to books_path do %><span class="glyphicon glyphicon-book" aria-hidden="true"><span class="list">Books</span></span><%end%></li>
+  <li><%= link_to destroy_user_session_path, method: :delete do %><span class="glyphicon glyphicon-log-in" aria-hidden="true"><span class="list">logout</span></span><%end%></li>
+  <% else %>
+  <li><%= link_to root_path do %><span class="glyphicon glyphicon-home" aria-hidden="true"><span class="list">Home</span></span><%end%></li>
+  <li><%= link_to home_about_path do %><span class="glyphicon glyphicon-link" aria-hidden="true"><span class="list">About</span></span><%end%></li>
+  <li><%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-edit" aria-hidden="true"><span class="list">sign up</span></span><%end%></li>
+  <li><%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in" aria-hidden="true"><span class="list">login</span></span><%end%></li>
+  <% end %>
+  </ul>
+  </div>
+
+  </nav>
+  </header>
+  <main class="clearfix">
+  <div class="main-contents">
+  <div class="notice">
+  <%= render 'layouts/flash' %>
+  </div>
+  <div class="container">
+<div class="row">
     <%= yield %>
-  </body>
+    </div>
+    </div>
+    </div>
+  </main>
+  <footer>
+  <p class="copyright">CopyRight Infratop.inc</p>
+  </footer>
 </html>

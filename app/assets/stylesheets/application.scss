@@ -13,45 +13,96 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #333333;
     font-family: verdana, arial, helvetica, sans-serif;
   }
- 
-body {
-    font-size: 13px;
-    line-height: 18px;
-    margin: 33px;
-}
-h1 {
-    margin-bottom: 10px;
-}
-h2{
-    margin: 16px 0;
-}
-div{
+  .clearfix::after {
+    content: "";
     display: block;
-    /* margin: 16px 0; */
+    clear: both;
+  }
+
+
+#error_explanation {
+    background-color: white;
+    border-color: #a94442;
+    color: #a94442;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid;
+    border-radius: 4px;
 }
-div.field, div.actions{
+#error_explanation h2, #error_explanation h3{
+    margin: 0 0 0 10px;
+}
+
+
+.main-contents {
+    margin-top: 50px;
+    padding: 20px 100px;
+}
+
+#sidebar{
+    margin-top: 50px;
+}
+.navbar{
+    height: 50px;
+}
+.navbar-brand{
+    margin: 0;
+}
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color:white;
+}
+.list{
+    margin-left: 8px;
+}
+.menu{
+    margin-right: 30px;
+}
+.top-content{
+    width: 40%;
+    margin: auto;
+}
+
+.input-field{
+    margin-bottom: 10px;
+    width: 200px;
+}
+.new-book-field{
     margin-bottom: 10px;
 }
 
-p, ul, a{
-    margin: 33px;
+
+.user-info{
+    font-weight:bold;
 }
-label{
-    display: block;
+.user-image{
+    padding: 10px;
 }
-table th{
-    padding: 3px;
+
+footer{
+    width: 60%;
+    margin: auto;
 }
-table td{
-    padding: 3px;
+.copyright{
+    text-align: right;
 }
+.notice{
+    color: green;
+}
+
+/*
 
 
 #notice{
@@ -79,3 +130,4 @@ table td{
     background-color: red;
     display: table;
 }
+*/
